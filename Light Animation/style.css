@@ -1,0 +1,151 @@
+body{
+    background: #000000;
+}
+
+.bulb-holder{
+    width: 50px;
+    height: 40px;
+    background: teal;
+    position: absolute;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform: translate(630px,120px);
+    z-index: 1;
+}
+.bulb{
+    width: 50px;
+    height: 20px;
+    background: #fff;
+    border-radius: 60%;
+    transform: translate(0px,30px);
+    animation: light 2000ms infinite cubic-bezier(1, -0.45, 0, 1.89);
+}
+#b1{
+    transform: translate(750px,200px);
+}
+#b2{
+    transform: translate(500px,200px);
+}
+
+.front{
+    width: 500px;
+    height: 500px;
+    background: #021414;
+    transform: translate(400px,100px);
+}
+#love{
+    width: 200px;
+    height: 100px;
+    transform: translate(190px,200px);
+}
+#love h1{
+    font-size: 4rem;
+    font-weight: bolder;
+    font-family: cursive;
+    background: radial-gradient(purple,lightcoral,yellow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 500ms infinite;
+}
+@keyframes gradient{
+    25%{
+        background: radial-gradient(purple,rgb(240, 128, 221),yellow);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    50%{
+        background: radial-gradient(aqua,dodgerblue,red);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    75%{
+        background: radial-gradient(rgb(233, 2, 156),rgb(64, 243, 47),yellow);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    100%{
+        background: radial-gradient(rgb(105, 128, 0),rgb(27, 240, 204),yellow);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+@keyframes light{
+    10%{
+        box-shadow: 0 1px 10px yellow,
+                0 2px 20px yellow,
+                10px 20px 30px yellow,            
+                -10px 20px 30px yellow,            
+                30px 50px 50px yellow,          
+                -30px 50px 50px yellow;
+
+    }
+    20%{
+        box-shadow: none;
+    }
+    30%{
+        box-shadow: 0 1px 10px lightcoral,
+                0 2px 20px lightcoral,
+                10px 20px 30px lightcoral,            
+                -10px 20px 30px lightcoral,            
+                30px 50px 50px lightcoral,          
+                -30px 50px 50px lightcoral;
+
+    }
+    40%{
+        box-shadow: none;
+    }
+    50%{
+        box-shadow: 0 1px 10px aqua,
+                0 2px 20px aqua,
+                10px 20px 30px aqua,            
+                -10px 20px 30px aqua,            
+                30px 50px 50px aqua,          
+                -30px 50px 50px aqua;
+
+    }
+    60%{
+        box-shadow: none;
+    }
+    70%{
+        box-shadow: 0 1px 10px purple,
+                0 2px 20px purple,
+                10px 20px 30px purple,            
+                -10px 20px 30px purple,            
+                30px 50px 50px purple,          
+                -30px 50px 50px purple;
+
+    }
+    80%{
+        box-shadow: 0 1px 10px tomato,
+        0 2px 20px tomato,
+        10px 20px 30px tomato,            
+        -10px 20px 30px tomato,            
+        30px 50px 50px tomato,          
+        -30px 50px 50px tomato;
+    } 
+    90%{
+        box-shadow: 0 1px 10px yellow,
+        0 2px 20px yellow,
+        10px 20px 30px yellow,            
+        -10px 20px 30px yellow,            
+        30px 50px 50px yellow,          
+        -30px 50px 50px yellow,
+        40px 60px 100px yellow,          
+        -40px 60px 100px yellow,
+        70px 70px 100px yellow,          
+        -70px 70px 100px yellow;
+    }
+    100%{
+        box-shadow: 0 1px 10px yellow,
+        0 2px 20px yellow,
+        10px 20px 30px yellow,            
+        -10px 20px 30px yellow,            
+        30px 50px 50px yellow,          
+        -30px 50px 50px yellow,
+        40px 60px 100px yellow,          
+        -40px 60px 100px yellow,
+        70px 70px 100px yellow,          
+        -70px 70px 100px yellow;
+    }
+}

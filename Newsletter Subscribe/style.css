@@ -1,0 +1,269 @@
+.newsletter-form {
+  --primary: #275EFE;
+  --primary-dark: #2055EE;
+  --primary-darkest: #133FC0;
+  --input-placeholder: #A6ACCD;
+  --input-text: #646B8C;
+  --border-default: #E1E6F9;
+  --border-active: #275EFE;
+  --background: #fff;
+  --button-text: #FFFFFF;
+  --success: #275EFE;
+  --trails: rgba(39, 94, 254, 0.15);
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  width: 100%;
+  background: var(--background);
+  box-shadow: inset 0 0 0 var(--border-width, 1px) var(--border, var(--border-default));
+  border-radius: 9px;
+  padding-right: 4px;
+  transition: box-shadow 0.25s;
+}
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+body {
+  min-height: 100vh;
+  display: flex;
+  font-family: "Inter", Arial;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+body .dribbble {
+  position: fixed;
+  display: block;
+  right: 20px;
+  bottom: 20px;
+}
+body .dribbble img {
+  display: block;
+  height: 28px;
+}
+body .twitter {
+  position: fixed;
+  display: block;
+  right: 64px;
+  bottom: 14px;
+}
+body .twitter svg {
+  width: 32px;
+  height: 32px;
+  fill: #1da1f2;
+}
+.newsletter-form:focus-within {
+  --border-width: 1.5px;
+  --border: var(--border-active);
+}
+.newsletter-form input,
+.newsletter-form button {
+  -webkit-appearance: none;
+  background: none;
+  outline: none;
+  display: block;
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0;
+}
+.newsletter-form input {
+  width: 100%;
+  flex-grow: 1;
+  padding: 12px 12px 12px 16px;
+  color: var(--input-text);
+  font-weight: 400;
+}
+.newsletter-form input::-moz-placeholder {
+  color: var(--input-placeholder);
+}
+.newsletter-form input:-ms-input-placeholder {
+  color: var(--input-placeholder);
+}
+.newsletter-form input::placeholder {
+  color: var(--input-placeholder);
+}
+.newsletter-form button {
+  --text-opacity: 1;
+  --success-x: -12px;
+  --success-stroke: 14px;
+  --success-opacity: 0;
+  --border-radius: 7px;
+  --overflow: hidden;
+  --x: 0px;
+  --y: 0px;
+  --rotate: 0deg;
+  --plane-x: 0px;
+  --plane-y: 0px;
+  --plane-opacity: 1;
+  --trails-stroke: 57px;
+  --left-wing-background: var(--primary);
+  --left-wing-first-x: 0%;
+  --left-wing-first-y: 0%;
+  --left-wing-second-x: 50%;
+  --left-wing-second-y: 0%;
+  --left-wing-third-x: 0%;
+  --left-wing-third-y: 100%;
+  --left-body-background: var(--primary);
+  --left-body-first-x: 50%;
+  --left-body-first-y: 0%;
+  --left-body-second-x: 50%;
+  --left-body-second-y: 100%;
+  --left-body-third-x: 0%;
+  --left-body-third-y: 100%;
+  --right-wing-background: var(--primary);
+  --right-wing-first-x: 50%;
+  --right-wing-first-y: 0%;
+  --right-wing-second-x: 100%;
+  --right-wing-second-y: 0%;
+  --right-wing-third-x: 100%;
+  --right-wing-third-y: 100%;
+  --right-body-background: var(--primary);
+  --right-body-first-x: 50%;
+  --right-body-first-y: 0%;
+  --right-body-second-x: 50%;
+  --right-body-second-y: 100%;
+  --right-body-third-x: 100%;
+  --right-body-third-y: 100%;
+  position: relative;
+  padding: 8px 0;
+  min-width: 100px;
+  text-align: center;
+  font-weight: 600;
+  opacity: var(--button-opacity, 0.5);
+  cursor: var(--button-cursor, not-allowed);
+  filter: var(--button-filter, grayscale(65%));
+  color: var(--button-text);
+  border-radius: var(--border-radius);
+  transform: translateZ(0);
+  transition: opacity 0.25s, filter 0.25s;
+  -webkit-tap-highlight-color: transparent;
+}
+.newsletter-form button:not(.active) {
+  background: var(--primary);
+}
+.newsletter-form button .plane,
+.newsletter-form button .trails {
+  pointer-events: none;
+  position: absolute;
+}
+.newsletter-form button .plane {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: translate(var(--x), var(--y)) rotate(var(--rotate)) translateZ(0);
+}
+.newsletter-form button .plane .left,
+.newsletter-form button .plane .right {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: var(--plane-opacity);
+  transform: translate(var(--plane-x), var(--plane-y)) translateZ(0);
+}
+.newsletter-form button .plane .left:before, .newsletter-form button .plane .left:after,
+.newsletter-form button .plane .right:before,
+.newsletter-form button .plane .right:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--border-radius);
+  transform: translate(var(--part-x, 0.25%), var(--part-y, 0)) translateZ(0);
+  z-index: var(--z-index, 2);
+  background: var(--b, var(--left-wing-background));
+  -webkit-clip-path: polygon(var(--first-x, var(--left-wing-first-x)) var(--first-y, var(--left-wing-first-y)), var(--second-x, var(--left-wing-second-x)) var(--second-y, var(--left-wing-second-y)), var(--third-x, var(--left-wing-third-x)) var(--third-y, var(--left-wing-third-y)));
+          clip-path: polygon(var(--first-x, var(--left-wing-first-x)) var(--first-y, var(--left-wing-first-y)), var(--second-x, var(--left-wing-second-x)) var(--second-y, var(--left-wing-second-y)), var(--third-x, var(--left-wing-third-x)) var(--third-y, var(--left-wing-third-y)));
+}
+.newsletter-form button .plane .left:after {
+  --part-x: 0;
+  --z-index: 1;
+  --b: var(--left-body-background);
+  --first-x: var(--left-body-first-x);
+  --first-y: var(--left-body-first-y);
+  --second-x: var(--left-body-second-x);
+  --second-y: var(--left-body-second-y);
+  --third-x: var(--left-body-third-x);
+  --third-y: var(--left-body-third-y);
+}
+.newsletter-form button .plane .right:before {
+  --part-x: -.25%;
+  --z-index: 2;
+  --b: var(--right-wing-background);
+  --first-x: var(--right-wing-first-x);
+  --first-y: var(--right-wing-first-y);
+  --second-x: var(--right-wing-second-x);
+  --second-y: var(--right-wing-second-y);
+  --third-x: var(--right-wing-third-x);
+  --third-y: var(--right-wing-third-y);
+}
+.newsletter-form button .plane .right:after {
+  --part-x: 0;
+  --z-index: 1;
+  --b: var(--right-body-background);
+  --first-x: var(--right-body-first-x);
+  --first-y: var(--right-body-first-y);
+  --second-x: var(--right-body-second-x);
+  --second-y: var(--right-body-second-y);
+  --third-x: var(--right-body-third-x);
+  --third-y: var(--right-body-third-y);
+}
+.newsletter-form button .trails {
+  display: block;
+  width: 33px;
+  height: 64px;
+  top: -4px;
+  left: 16px;
+  fill: none;
+  stroke: var(--trails);
+  stroke-linecap: round;
+  stroke-width: 2;
+  stroke-dasharray: 57px;
+  stroke-dashoffset: var(--trails-stroke);
+  transform: rotate(68deg) translateZ(0);
+}
+.newsletter-form button span {
+  display: block;
+  position: relative;
+  z-index: 4;
+  opacity: var(--text-opacity);
+}
+.newsletter-form button span.success {
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 8px;
+  transform: translateX(var(--success-x)) translateZ(0);
+  opacity: var(--success-opacity);
+  color: var(--success);
+}
+.newsletter-form button span.success svg {
+  display: inline-block;
+  vertical-align: top;
+  width: 16px;
+  height: 16px;
+  margin: 4px 8px 0 0;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 14px;
+  stroke: var(--success);
+  stroke-dashoffset: var(--success-stroke);
+}
+.newsletter-form.valid {
+  --button-opacity: 1;
+  --button-cursor: pointer;
+  --button-filter: grayscale(0%);
+}
+

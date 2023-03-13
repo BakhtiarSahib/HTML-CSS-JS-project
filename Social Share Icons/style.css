@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+*{
+    padding: 0;
+    margin: 0; 
+    font-family: 'Quicksand', sans-serif;
+}
+body{
+    background:#000;
+}
+ul{
+    position: absolute;
+    top: 50%;  width: 100%;  text-align: center;
+    transform: translate(0,-50%);  
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    width: 90px;  height: 100px;
+    margin: 0 40px;
+    transform: rotate(-25deg) skewX(20deg);
+    box-shadow: none;
+    transition: .9s;
+}
+ul li::before{
+   content: '';
+   position: absolute;
+   top: 0;  left: -15px;
+   width: 15px;   height: 100%;
+   background: #b1afaf;
+   transform-origin: right;
+   transform: skewY(-45deg);
+   transition: .5s;
+}
+ul li::after{
+    content: '';
+    position: absolute;
+    bottom: -15px;  left: 0;
+    width: 100%;   height: 15px;
+    background: #dcd9d9;
+    transform-origin: top;
+    transform: skewX(-45deg);
+    transition: .5s;
+ }
+ul li a{
+    display: inline-block;
+    position: relative;
+    text-decoration: none;  
+    color: #262626;   background: #fff;
+    width: 100%;  height: 100%;   line-height: 100px;
+    font-size: 45px;
+    transition: .5s;
+}
+ul li:hover{
+    transform: translateY(-40px) rotate(-25deg) skewX(20deg);
+    box-shadow: -60px 60px 30px grey;
+}
+ul li:hover a{
+   color: #fff;
+}
+ul li:hover:nth-of-type(1) a{
+    background: #3b5999;
+}
+ul li:hover:nth-of-type(1)::before{
+    background: #3866ca;
+}
+ul li:hover:nth-of-type(1)::after{
+    background: #5173bd;
+}
+
+ul li:hover:nth-of-type(2) a{
+    background: #55acee;
+}
+ul li:hover:nth-of-type(2)::before{
+    background: #369ae7;
+}
+ul li:hover:nth-of-type(2)::after{
+    background: #7eb8e5;
+}
+
+ul li:hover:nth-of-type(3) a{
+    background: #dd4b39;
+}
+ul li:hover:nth-of-type(3)::before{
+    background: #eb402a;
+}
+ul li:hover:nth-of-type(3)::after{
+    background: #cc6356;
+}
+
+ul li:hover:nth-of-type(4) a{
+    background: #0077B5;
+}
+ul li:hover:nth-of-type(4)::before{
+    background: #005c8c;
+}
+ul li:hover:nth-of-type(4)::after{
+    background: #2498d4;
+}
+
+ul li:hover:nth-of-type(5) a{
+    background: #00AFF0;
+}
+ul li:hover:nth-of-type(5)::before{
+    background: #0894c8;
+}
+ul li:hover:nth-of-type(5)::after{
+    background: #26c4ff;
+}
