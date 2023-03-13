@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #000;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 1000px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.head {
+  height: 20px;
+  width: 50px;
+  background: #d7d2cc;
+  position: absolute;
+  left: 48%;
+  top: -7%;
+  border-radius: 54% 46% 0% 100% / 100% 94% 6% 0%;
+  box-shadow: 0 2px 30px #70777b;
+}
+
+.charger {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 410px;
+  border: 2px solid #d7d2cc;
+  background: black;
+  border-radius: 30px;
+  
+}
+
+.box {
+  left: 10px;
+  width: 240px;
+  height: 400px;
+  background: black;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  transform: rotate(180deg);
+}
+
+.wave {
+  opacity: 0.4;
+  position: absolute;
+  bottom: 60%;
+  left: 50%;
+  background: linear-gradient(to right, #ff00cc, #333399);
+  width: 500px;
+  height: 500px;
+  transform-origin: 50% 48%;
+  border-radius: 40%;
+  margin-left: -250px;
+  margin-top: -250px;
+  animation: 3000ms linear infinite reverse drift;
+}
+
+.wave-three {
+  animation: 5000ms linear infinite drift;
+  
+  opacity: 0.5;
+}
+
+.wave .wave-two {
+  animation: 7000ms linear infinite backwards drift;
+  opacity: .2;
+}
+
+.shade {
+  width: 25px;
+  height: 70px;
+  background: #fc67fa;
+  border-radius: 25px;
+  position: relative;
+  left: 85%;
+  top: 10%;
+}
+
+.x1 {
+	animation: animateBubble 10s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	left: -5%;
+	top: 5%;
+	transform: scale(0.1);
+}
+.x2 {
+	animation: animateBubble 15s linear infinite, sideWays 5s ease-in-out infinite alternate;
+	left: 5%;
+	top: 4%;
+	transform: scale(0.09);
+}
+.x3 {
+	animation: animateBubble 12s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	left: 5%;
+	top: 10%;
+	transform: scale(0.09);
+}
+.x4 {
+	animation: animateBubble 16s linear infinite, sideWays 3s ease-in-out infinite alternate;
+	left: 5%;
+	top: 8%;
+	transform: scale(0.09);
+}
+.x5 {
+	animation: animateBubble 14s linear infinite, sideWays 6s ease-in-out infinite alternate;
+	left: 5%;
+	top: 8%;
+	transform: scale(0.09);
+}
+.x6 {
+	animation: animateBubble 17s linear infinite, sideWays 3s ease-in-out infinite alternate;
+	left: 5%;
+	top: 8%;
+	transform: scale(0.09);
+}
+.x7 {
+	animation: animateBubble 16s linear infinite, sideWays 5s ease-in-out infinite alternate;
+	left: 5%;
+	top: 8%;;
+	transform: scale(0.09);
+}
+.x8 {
+	animation: animateBubble 19s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	left: 5%;
+	top: 8%;;
+	transform: scale(0.09);
+}
+.x9 {
+	animation: animateBubble 18s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	left: 5%;
+	top: 8%;;
+	transform: scale(0.09);
+}
+.x10 {
+	animation: animateBubble 20s linear infinite, sideWays 5s ease-in-out infinite alternate;
+	left: 5%;
+	top: 8%;;
+	transform: scale(0.09);
+}
+.bubble {
+	border-radius: 50%;
+  height: 200px;
+	position: absolute;
+	width: 200px;
+}
+
+.bubble:after {
+   background: linear-gradient( #ff00cc, #333399);
+	border-radius: 50%;
+	content: "";
+  height: 180px;
+	left: 10px;
+	position: absolute;
+	width: 180px;
+}
+
+.title {
+  position: absolute;
+  right: 7%;
+  bottom: 40%;
+  transform: rotate(180deg);
+  width: 100%;
+  line-height: 300px;
+  text-align: center;
+  color: white;
+  font-family: 'Goldman', cursive;
+  letter-spacing: .2em;
+  font-size: 20px;
+  text-shadow: 0 1px 0 rgba(black, .1);
+  text-indent: .3em;
+}
+
+@keyframes drift {
+  from {transform: rotate(0deg);}
+  from {transform: rotate(360deg);}
+}
+@keyframes animateBubble {
+    0% {
+        margin-top: 10px;
+    }
+    100% {
+        margin-top: 900%;
+    }
+}
+@keyframes sideWays { 
+    0% { 
+        margin-left:0px;
+    }
+    100% { 
+        margin-left:50px;
+    }
+}

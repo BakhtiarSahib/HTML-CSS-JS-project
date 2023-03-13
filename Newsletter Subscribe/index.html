@@ -1,0 +1,186 @@
+<html lang="en" data-lt-installed="true">
+<head>
+  <title>Newsletter Subscribe</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
+</head>
+
+<body translate="no">
+  <form class="newsletter-form valid">
+    <input type="email" placeholder="Email address">
+    <button class="" style="">
+        <span class="default">Subscribe</span>
+        <span class="success">
+            <svg viewBox="0 0 16 16">
+                <polyline points="3.75 9 7 12 13 5"></polyline>
+            </svg>Done
+        </span>
+        <svg class="trails" viewBox="0 0 33 64">
+            <path d="M26,4 C28,13.3333333 29,22.6666667 29,32 C29,41.3333333 28,50.6666667 26,60"></path>
+            <path d="M6,4 C8,13.3333333 9,22.6666667 9,32 C9,41.3333333 8,50.6666667 6,60"></path>
+        </svg>
+        <div class="plane">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </button>
+</form>
+
+<!-- dribbble - twitter -->
+<a class="dribbble" href="https://dribbble.com/ai" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
+<a class="twitter" target="_top" href="https://twitter.com/aaroniker_me"><svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72"><path d="M67.812 16.141a26.246 26.246 0 0 1-7.519 2.06 13.134 13.134 0 0 0 5.756-7.244 26.127 26.127 0 0 1-8.313 3.176A13.075 13.075 0 0 0 48.182 10c-7.229 0-13.092 5.861-13.092 13.093 0 1.026.118 2.021.338 2.981-10.885-.548-20.528-5.757-26.987-13.679a13.048 13.048 0 0 0-1.771 6.581c0 4.542 2.312 8.551 5.824 10.898a13.048 13.048 0 0 1-5.93-1.638c-.002.055-.002.11-.002.162 0 6.345 4.513 11.638 10.504 12.84a13.177 13.177 0 0 1-3.449.457c-.846 0-1.667-.078-2.465-.231 1.667 5.2 6.499 8.986 12.23 9.09a26.276 26.276 0 0 1-16.26 5.606A26.21 26.21 0 0 1 4 55.976a37.036 37.036 0 0 0 20.067 5.882c24.083 0 37.251-19.949 37.251-37.249 0-.566-.014-1.134-.039-1.694a26.597 26.597 0 0 0 6.533-6.774z"></path></svg></a>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+      <script id="rendered-js">
+const { to, fromTo, set } = gsap;
+
+function validateEmail(email) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
+document.querySelectorAll('.newsletter-form').forEach(form => {
+
+  let input = form.querySelector('input'),
+  button = form.querySelector('button'),
+  getVar = variable => getComputedStyle(button).getPropertyValue(variable);
+
+  input.addEventListener('input', e => {
+    form.classList.toggle('valid', validateEmail(input.value));
+  });
+
+  form.addEventListener('submit', e => {
+
+    e.preventDefault();
+
+    if (!validateEmail(input.value)) {
+      input.focus();
+      return;
+    }
+
+    if (!button.classList.contains('active')) {
+
+      button.classList.add('active');
+
+      to(button, {
+        keyframes: [{
+          '--left-wing-first-x': '50%',
+          '--left-wing-first-y': '100%',
+          '--right-wing-second-x': '50%',
+          '--right-wing-second-y': '100%',
+          duration: .2,
+          onComplete() {
+            set(button, {
+              '--left-wing-first-y': '0%',
+              '--left-wing-second-x': '40%',
+              '--left-wing-second-y': '100%',
+              '--left-wing-third-x': '0%',
+              '--left-wing-third-y': '100%',
+              '--left-body-third-x': '40%',
+              '--right-wing-first-x': '50%',
+              '--right-wing-first-y': '0%',
+              '--right-wing-second-x': '60%',
+              '--right-wing-second-y': '100%',
+              '--right-wing-third-x': '100%',
+              '--right-wing-third-y': '100%',
+              '--right-body-third-x': '60%' });
+
+          } },
+        {
+          '--left-wing-third-x': '20%',
+          '--left-wing-third-y': '90%',
+          '--left-wing-second-y': '90%',
+          '--left-body-third-y': '90%',
+          '--right-wing-third-x': '80%',
+          '--right-wing-third-y': '90%',
+          '--right-body-third-y': '90%',
+          '--right-wing-second-y': '90%',
+          duration: .2 },
+        {
+          '--rotate': '50deg',
+          '--left-wing-third-y': '95%',
+          '--left-wing-third-x': '27%',
+          '--right-body-third-x': '45%',
+          '--right-wing-second-x': '45%',
+          '--right-wing-third-x': '60%',
+          '--right-wing-third-y': '83%',
+          duration: .25 },
+        {
+          '--rotate': '60deg',
+          '--plane-x': '-8px',
+          '--plane-y': '40px',
+          duration: .2 },
+        {
+          '--rotate': '40deg',
+          '--plane-x': '45px',
+          '--plane-y': '-300px',
+          '--plane-opacity': 0,
+          duration: .375,
+          onComplete() {
+            setTimeout(() => {
+              button.removeAttribute('style');
+              fromTo(button, {
+                opacity: 0,
+                y: -8 },
+              {
+                opacity: 1,
+                y: 0,
+                clearProps: true,
+                duration: .3,
+                onComplete() {
+                  button.classList.remove('active');
+                } });
+
+            }, 2500);
+          } }] });
+
+
+
+      to(button, {
+        keyframes: [{
+          '--text-opacity': 0,
+          '--border-radius': '0px',
+          '--left-wing-background': getVar('--primary-dark'),
+          '--right-wing-background': getVar('--primary-dark'),
+          duration: .1 },
+        {
+          '--left-wing-background': getVar('--primary'),
+          '--right-wing-background': getVar('--primary'),
+          duration: .15 },
+        {
+          '--left-body-background': getVar('--primary-dark'),
+          '--right-body-background': getVar('--primary-darkest'),
+          duration: .25,
+          delay: .1 },
+        {
+          '--trails-stroke': '171px',
+          duration: .22,
+          delay: .22 },
+        {
+          '--success-opacity': 1,
+          '--success-x': '0px',
+          duration: .2,
+          delay: .15 },
+        {
+          '--success-stroke': '0px',
+          duration: .15 }] });
+
+
+
+    }
+
+  });
+
+});
+window.console = window.console || function(t) {};
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+
+    </script>
+     
+ 
+
+</body></html>
